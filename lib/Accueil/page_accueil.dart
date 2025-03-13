@@ -1,3 +1,6 @@
+import 'package:apps1/widgets/beach.dart';
+import 'package:apps1/widgets/recommandation.dart';
+import 'package:apps1/widgets/serviceItem.dart';
 import 'package:flutter/material.dart';
 
 class AccueilPage extends StatefulWidget {
@@ -93,21 +96,25 @@ class _AccueilPageState extends State<AccueilPage> {
                   icon: 'assets/images/aeroport.png',
                   label: 'Aeroport',
                 ),
+                SizedBox(width: 17),
                 ServiceItem(icon: 'assets/images/hotel.png', label: 'Hotel'),
+                SizedBox(width: 17),
                 ServiceItem(
                   icon: 'assets/images/voiture.png',
                   label: 'Location',
                 ),
+                SizedBox(width: 17),
                 ServiceItem(
                   icon: 'assets/images/plus-dinfos.png',
                   label: 'Infos',
                 ),
+                SizedBox(width: 17),
               ],
             ),
           ),
 
           // 4e Partie : Recommandation
-          SizedBox(height: 20.0),
+          SizedBox(height: 15.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
@@ -126,131 +133,47 @@ class _AccueilPageState extends State<AccueilPage> {
                   ),
                 ),
                 // Images et description
-                Row(
-                  children: [
-                    // Los Angeles
-                    Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Alignement à gauche
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                            15,
-                          ), // Arrondir les coins
-                          child: Image.asset(
-                            'assets/images/angeles.jpg', // Chemin de l'image
-                            width: 135,
-                            height: 120,
-                            fit: BoxFit.cover, // Ajustement de l'image
+                SizedBox(
+                  height: 160.0,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Row(
+                        children: [
+                          // Los Angeles
+                          Recommandation(
+                            img: 'assets/images/angeles.jpg',
+                            titre: 'Grand Texte 1',
+                            soustitre: 'Petit Texte 1',
                           ),
-                        ),
-                        SizedBox(height: 5), // Espace entre l'image et le texte
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Grand Texte 1', // Grand texte
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+
+                          SizedBox(width: 10), // Espace entre les colonnes
+                          // 2e lieux Tokyo
+                          Recommandation(
+                            img: 'assets/images/tokyo.jpg',
+                            titre: 'Grand Texte 2',
+                            soustitre: 'Petit Texte 2',
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Petit Texte 1', // Petit texte
-                            style: TextStyle(fontSize: 10, color: Colors.grey),
+
+                          SizedBox(width: 10), // Espace entre les colonnes
+                          // 3e lieux Washington
+                          Recommandation(
+                            img: 'assets/images/bridge.jpg',
+                            titre: 'Grand Texte 3',
+                            soustitre: 'Petit Texte 3',
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(width: 10), // Espace entre les colonnes
-                    // 2e lieux Tokyo
-                    Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Alignement à gauche
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                            15,
-                          ), // Arrondir les coins
-                          child: Image.asset(
-                            'assets/images/tokyo.jpg', // Chemin de l'image
-                            width: 135,
-                            height: 120,
-                            fit: BoxFit.cover, // Ajustement de l'image
+
+                          // 4e lieux Chine
+                          SizedBox(width: 10),
+                          Recommandation(
+                            img: 'assets/images/china.jpg',
+                            titre: 'Grand Texte 4',
+                            soustitre: 'Petit Texte 4',
                           ),
-                        ),
-                        SizedBox(height: 5), // Espace entre l'image et le texte
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Grand Texte 2', // Grand texte
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Petit Texte 2', // Petit texte
-                            style: TextStyle(fontSize: 10, color: Colors.grey),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(width: 10), // Espace entre les colonnes
-                    // 3e lieux Washington
-                    Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Alignement à gauche
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                            15,
-                          ), // Arrondir les coins
-                          child: Image.asset(
-                            'assets/images/bridge.jpg', // Chemin de l'image
-                            width: 135,
-                            height: 120,
-                            fit: BoxFit.cover, // Ajustement de l'image
-                          ),
-                        ),
-                        SizedBox(height: 5), // Espace entre l'image et le texte
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Grand Texte 3', // Grand texte
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 7,
-                          ), // Décalage de 7px à droite
-                          child: Text(
-                            'Petit Texte 3', // Petit texte
-                            style: TextStyle(fontSize: 10, color: Colors.grey),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -281,190 +204,29 @@ class _AccueilPageState extends State<AccueilPage> {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
-                Row(
-                  //crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Image avec coins arrondis
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                        15,
-                      ), // Rayon des coins arrondis
-                      child: Image.asset(
-                        'assets/images/tokyo.jpg',
-                        width: 135,
-                        height: 120,
-                        fit: BoxFit.cover, // Ajustement de l'image
-                      ),
-                    ),
-                    SizedBox(width: 10), // Espace entre l'image et les textes
-                    // Column pour les textes descriptifs
-                    Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Alignement à gauche
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10.0),
-                          child: Text(
-                            'Kribi Beach', // Grand texte
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'Description 1', // Petit texte
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
-                        ),
-                        SizedBox(height: 30),
-                        Row(
-                          children: [
-                            Icon(Icons.pin_drop, size: 16, color: Colors.red),
-                            const SizedBox(width: 5),
-                            Text(
-                              'localisation',
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-
-                    // test affichage de prix
-                    SizedBox(width: 35),
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          r'$20',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          '/Days',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                            //fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                Beach(
+                  img: 'assets/images/tropical.jpg',
+                  title: 'Kribi Beach',
+                  describe: 'Description 1',
+                  locate: 'Localisation',
+                  price: r'$20',
+                  date: '/Days',
                 ),
                 SizedBox(height: 20.0),
                 // Limbe beach
-                Row(
-                  //crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Image avec coins arrondis
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                        15,
-                      ), // Rayon des coins arrondis
-                      child: Image.asset(
-                        'assets/images/tokyo.jpg',
-                        width: 135,
-                        height: 120,
-                        fit: BoxFit.cover, // Ajustement de l'image
-                      ),
-                    ),
-                    SizedBox(width: 10), // Espace entre l'image et les textes
-                    // Column pour les textes descriptifs
-                    Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Alignement à gauche
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10.0),
-                          child: Text(
-                            'Limbe Beach', // Grand texte
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'Description 1', // Petit texte
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
-                        ),
-                        SizedBox(height: 30),
-                        Row(
-                          children: [
-                            Icon(Icons.pin_drop, size: 16, color: Colors.red),
-                            const SizedBox(width: 5),
-                            Text(
-                              'localisation',
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-
-                    // test affichage de prix 2
-                    SizedBox(width: 25),
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          r'$30',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          '/Days',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey,
-                            //fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                Beach(
+                  img: 'assets/images/ocean.jpg',
+                  title: 'limbe Beach',
+                  describe: 'Description 2',
+                  locate: 'Localisation',
+                  price: r'$30',
+                  date: '/Days',
                 ),
               ],
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-// Widget réutilisable pour les éléments de service
-class ServiceItem extends StatelessWidget {
-  final String icon;
-  final String label;
-
-  const ServiceItem({required this.icon, required this.label, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(icon, width: 50, height: 50),
-        const SizedBox(height: 5),
-        Text(label, style: TextStyle(fontSize: 14)),
-      ],
     );
   }
 }
